@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action='/bracelets/{{ bracelet._id }}'>
+    <fieldset>
+    <legend>New Bracelet</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='brand'>brand</label><br>
+        <input type="text" name="brand" value="{{ bracelet.brand }}"/>
+    </p>
+    <p>
+        <label for='size'>size</label><br>
+        <input type='text' name='size' value="{{ bracelet.size }}"/>
+    </p>
+    <p>
+        <label for='image'>image</label><br>
+        <input type='text' name='image' value="{{ bracelet.image }}"/>
+    </p>
+    <p>
+        <label for='price'>price</label><br>
+        <input type='text' name='price' value="{{ bracelet.price }}"/>
+    </p>
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Save Bracelet</button>
+    </p>
+</form>
+{% endblock %}

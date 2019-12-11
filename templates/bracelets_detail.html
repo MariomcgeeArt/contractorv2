@@ -1,0 +1,12 @@
+<!-- templates/playlists_show.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="/bracelets/{{ bracelet._id }}/edit">Edit Bracelet Details</a>
+
+<h1>{{ bracelet.brand }}</h1>
+<h2>{{ bracelet.size }}</h2>
+<img src = "{{ bracelet.image }}">
+
+
+{% endblock %}
