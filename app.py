@@ -68,5 +68,11 @@ def bracelets_edit(bracelet_id):
     return render_template('bracelets_edit.html', bracelet=bracelet, title='Edit bracelet')
 
 
+@app.route('/bracelets/<bracelet_id>/delete', methods=['POST'])
+def bracelets_delete(bracelet_id):
+    """Delete one playlist."""
+    bracelets.delete_one({'_id': ObjectId(bracelet_id)})
+    return redirect(url_for('bracelets_index'))
+
 
 

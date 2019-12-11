@@ -8,5 +8,10 @@
 <h2>{{ bracelet.size }}</h2>
 <img src = "{{ bracelet.image }}">
 
-
+<p><form method='POST' action='/bracelets/{{ bracelet._id }}/delete'>
+    <button type='submit'>Delete</button>
+</form></p>
 {% endblock %}
+
+
+
