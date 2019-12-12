@@ -73,6 +73,7 @@ def bracelets_delete(bracelet_id):
     """Delete one bracelet."""
     bracelets.delete_one({'_id': ObjectId(bracelet_id)})
     return redirect(url_for('bracelets_index'))
+    
 
 
 
