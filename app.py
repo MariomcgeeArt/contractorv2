@@ -37,7 +37,7 @@ def bracelet_submit():
 
 @app.route('/bracelets/<bracelet_id>')
 def bracelets_detail(bracelet_id):
-    """Show a single playlist."""
+    """Show a single bracelet."""
     bracelet = bracelets.find_one({'_id': ObjectId(bracelet_id)})
     return render_template('bracelets_detail.html', bracelet = bracelet)
 
@@ -62,7 +62,7 @@ def bracelets_update(bracelet_id):
 
 @app.route('/bracelets/<bracelet_id>/edit')
 def bracelets_edit(bracelet_id):
-    """Show the edit form for a playlist."""
+    """Show the edit form for a bracelet."""
     bracelet = bracelets.find_one({'_id': ObjectId(bracelet_id)})
     # Add the title parameter here
     return render_template('bracelets_edit.html', bracelet=bracelet, title='Edit bracelet')
@@ -70,7 +70,7 @@ def bracelets_edit(bracelet_id):
 
 @app.route('/bracelets/<bracelet_id>/delete', methods=['POST'])
 def bracelets_delete(bracelet_id):
-    """Delete one playlist."""
+    """Delete one bracelet."""
     bracelets.delete_one({'_id': ObjectId(bracelet_id)})
     return redirect(url_for('bracelets_index'))
 
